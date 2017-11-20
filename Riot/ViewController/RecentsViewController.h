@@ -16,6 +16,9 @@
  */
 
 #import <MatrixKit/MatrixKit.h>
+#import "ChatForwardViewController.h"
+
+@class ChatForwardViewController;
 
 @interface RecentsViewController : MXKRecentListViewController <MXKRecentListViewControllerDelegate>
 {
@@ -83,6 +86,17 @@
  */
 @property (nonatomic) NSString *screenName;
 
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)
+/**
+ Display the recents described in the provided data source.
+ 
+ @param listDataSource the data source providing the recents list.
+ @param chatForwardViewController the listing in which the ChatForwardViewController is displayed.
+ */
+
+- (void)displayList:(MXKRecentsDataSource*)listDataSource fromChatForwardViewController:(ChatForwardViewController*)chatForwardViewController;
+
+
 /**
  Return the sticky header for the specified section of the table view
  
@@ -104,9 +118,9 @@
 
 /**
  Refresh the cell selection in the table.
-
+ 
  This must be done accordingly to the currently selected room in the master tabbar of the application.
-
+ 
  @param forceVisible if YES and if the corresponding cell is not visible, scroll the table view to make it visible.
  */
 - (void)refreshCurrentSelectedCell:(BOOL)forceVisible;

@@ -28,7 +28,7 @@
 @interface MasterTabBarController ()
 {
     // Array of `MXSession` instances.
-    NSMutableArray *mxSessionArray;    
+    NSMutableArray *mxSessionArray;
     
     // Tell whether the authentication screen is preparing.
     BOOL isAuthViewControllerPreparing;
@@ -65,7 +65,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
+    
     // Retrieve the all view controllers
     _homeViewController = [self.viewControllers objectAtIndex:TABBAR_HOME_INDEX];
     _favouritesViewController = [self.viewControllers objectAtIndex:TABBAR_FAVOURITES_INDEX];
@@ -74,7 +74,7 @@
     
     // Sanity check
     NSAssert(_homeViewController && _favouritesViewController && _peopleViewController && _roomsViewController, @"Something wrong in Main.storyboard");
-
+    
     // Adjust the display of the icons in the tabbar.
     for (UITabBarItem *tabBarItem in self.tabBar.items)
     {
@@ -212,6 +212,15 @@
 - (NSArray*)mxSessions
 {
     return [NSArray arrayWithArray:mxSessionArray];
+}
+
+
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)
+-(RecentsDataSource*)getRecentDataSource{
+    if (recentsDataSource) {
+        return recentsDataSource;
+    }
+    return nil;
 }
 
 - (void)initializeDataSources

@@ -36,6 +36,7 @@
 		24EEE5B41F2607C000B3C705 /* SegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F083BC4E1E7009EC00A9B29C /* SegmentedViewController.m */; };
 		24EEE5B51F2607C500B3C705 /* SegmentedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F083BC4F1E7009EC00A9B29C /* SegmentedViewController.xib */; };
 		268F9A229B0162F9C8AEBE34 /* libPods-RiotPods-Riot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 714B084D44A5553C13D855BA /* libPods-RiotPods-Riot.a */; };
+		2BB81D411FC3327300FD7B38 /* ChatForwardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81D401FC3327300FD7B38 /* ChatForwardViewController.m */; };
 		319F86690284AA02FC397A15 /* libPods-RiotPods-SiriIntents.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1A4A3DCE26410A60959E96 /* libPods-RiotPods-SiriIntents.a */; };
 		3205ED7D1E976C8A003D65FA /* DirectoryServerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205ED7C1E976C8A003D65FA /* DirectoryServerPickerViewController.m */; };
 		3205ED841E97725E003D65FA /* DirectoryServerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205ED821E97725E003D65FA /* DirectoryServerTableViewCell.m */; };
@@ -632,6 +633,8 @@
 		24D6B34E1F3C8F8A00FC7A71 /* ShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
 		24D6B3561F3C90D300FC7A71 /* ShareDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareDataSource.h; sourceTree = "<group>"; };
 		24D6B3571F3C90D300FC7A71 /* ShareDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareDataSource.m; sourceTree = "<group>"; };
+		2BB81D3F1FC3327300FD7B38 /* ChatForwardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatForwardViewController.h; sourceTree = "<group>"; };
+		2BB81D401FC3327300FD7B38 /* ChatForwardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatForwardViewController.m; sourceTree = "<group>"; };
 		3205ED7B1E976C8A003D65FA /* DirectoryServerPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryServerPickerViewController.h; sourceTree = "<group>"; };
 		3205ED7C1E976C8A003D65FA /* DirectoryServerPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryServerPickerViewController.m; sourceTree = "<group>"; };
 		3205ED811E97725E003D65FA /* DirectoryServerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryServerTableViewCell.h; sourceTree = "<group>"; };
@@ -1405,6 +1408,15 @@
 			path = RiotShareExtension/Model;
 			sourceTree = SOURCE_ROOT;
 		};
+		2BB81D3E1FC3326300FD7B38 /* Chat Forward */ = {
+			isa = PBXGroup;
+			children = (
+				2BB81D3F1FC3327300FD7B38 /* ChatForwardViewController.h */,
+				2BB81D401FC3327300FD7B38 /* ChatForwardViewController.m */,
+			);
+			name = "Chat Forward";
+			sourceTree = "<group>";
+		};
 		3205ED801E97725E003D65FA /* Directory */ = {
 			isa = PBXGroup;
 			children = (
@@ -2018,6 +2030,7 @@
 		F083BC191E7009EC00A9B29C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2BB81D3E1FC3326300FD7B38 /* Chat Forward */,
 				3233F72D1F31F47E006ACA81 /* Widgets */,
 				F0B4CBA81F41E71A008E99C5 /* RiotNavigationController.h */,
 				F0B4CBA91F41E71A008E99C5 /* RiotNavigationController.m */,
@@ -3371,6 +3384,7 @@
 				F083BE311E7009ED00A9B29C /* DeviceTableViewCell.m in Sources */,
 				F083BE501E7009ED00A9B29C /* RoomOutgoingEncryptedTextMsgBubbleCell.m in Sources */,
 				F083BDED1E7009ED00A9B29C /* MXKRoomBubbleTableViewCell+Riot.m in Sources */,
+				2BB81D411FC3327300FD7B38 /* ChatForwardViewController.m in Sources */,
 				F05BD79E1E7AEBF800C69941 /* UnifiedSearchViewController.m in Sources */,
 				F083BE561E7009ED00A9B29C /* RoomOutgoingEncryptedTextMsgWithPaginationTitleBubbleCell.m in Sources */,
 				F02C1A861E8EB04C0045A404 /* PeopleViewController.m in Sources */,

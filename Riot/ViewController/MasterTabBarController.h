@@ -22,6 +22,7 @@
 #import "FavouritesViewController.h"
 #import "PeopleViewController.h"
 #import "RoomsViewController.h"
+#import "RecentsDataSource.h"
 
 #import "RoomViewController.h"
 #import "ContactDetailsViewController.h"
@@ -127,6 +128,9 @@
 // References on the currently selected contact and its view controller
 @property (nonatomic, readonly) ContactDetailsViewController *currentContactDetailViewController;
 @property (nonatomic, readonly) MXKContact *selectedContact;
+
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)
+@property (nonatomic, readonly) RecentsDataSource *getRecentDataSource;
 
 @end
 

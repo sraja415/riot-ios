@@ -30,6 +30,12 @@
 
 #import "RiotDesignValues.h"
 
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)
+#import "HomeViewController.h"
+#import "RecentsDataSource.h"
+#import "HomeMessagesSearchDataSource.h"
+
+
 #pragma mark - Notifications
 /**
  Posted when the user taps the clock status bar.
@@ -53,6 +59,14 @@ extern NSString *const kAppDelegateNetworkStatusDidChangeNotification;
  Application main view controller
  */
 @property (nonatomic, readonly) MasterTabBarController *masterTabBarController;
+
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)  **START**
+@property (nonatomic,readonly) HomeViewController *homeViewController;
+
+@property (nonatomic, readonly) RecentsDataSource *recentDataSource;
+
+@property (nonatomic, readonly) HomeMessagesSearchDataSource *messagesSearchDataSource;
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)    **END**
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -165,4 +179,5 @@ extern NSString *const kAppDelegateNetworkStatusDidChangeNotification;
 @property (nonatomic, readonly) UIButton* callStatusBarButton;
 
 @end
+AppDelegate *appDelegate(void);
 

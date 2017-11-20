@@ -1,13 +1,13 @@
 /*
  Copyright 2015 OpenMarket Ltd
  Copyright 2017 Vector Creations Ltd
-
+ 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
-
+ 
  http://www.apache.org/licenses/LICENSE-2.0
-
+ 
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,7 +35,7 @@ typedef enum : NSUInteger
 
 /**
  Action identifier used when the user tapped on the directory change button.
-
+ 
  The `userInfo` is nil.
  */
 extern NSString *const kRecentsDataSourceTapOnDirectoryServerChange;
@@ -53,11 +53,12 @@ extern NSString *const kRecentsDataSourceTapOnDirectoryServerChange;
 @property (nonatomic) NSInteger conversationSection;
 @property (nonatomic) NSInteger lowPrioritySection;
 
-@property (nonatomic, readonly) NSArray* invitesCellDataArray;
-@property (nonatomic, readonly) NSArray* favoriteCellDataArray;
-@property (nonatomic, readonly) NSArray* peopleCellDataArray;
-@property (nonatomic, readonly) NSArray* conversationCellDataArray;
-@property (nonatomic, readonly) NSArray* lowPriorityCellDataArray;
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)
+@property (nonatomic, retain) NSArray* invitesCellDataArray;
+@property (nonatomic, retain) NSMutableArray* favoriteCellDataArray;
+@property (nonatomic, retain) NSMutableArray* peopleCellDataArray;
+@property (nonatomic, retain) NSMutableArray* conversationCellDataArray;
+@property (nonatomic, retain) NSMutableArray* lowPriorityCellDataArray;
 
 /**
  Set the delegate by specifying the selected display mode.
@@ -95,7 +96,7 @@ extern NSString *const kRecentsDataSourceTapOnDirectoryServerChange;
 
 /**
  Get the height of the section header view.
-
+ 
  @param section the section  index
  @return the header height.
  */

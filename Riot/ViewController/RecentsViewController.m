@@ -38,6 +38,9 @@
     // Tell whether a recents refresh is pending (suspended during editing mode).
     BOOL isRefreshPending;
     
+    
+    ChatForwardViewController *forwardHomeViewController; //Forward_Feature_Enhancement by sraja415@
+    
     // Recents drag and drop management
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     UIImageView *cellSnapshot;
@@ -312,6 +315,19 @@
         
     });
 }
+
+//Forwarding_Feature_Enhancement by sraja (Neo Anderson)
+- (void)displayList:(MXKRecentsDataSource*)listDataSource fromChatForwardViewController:(ChatForwardViewController*)chatForwardViewController
+{
+    [super displayList:listDataSource];
+    [self refreshRecentsTable];
+    forwardHomeViewController = chatForwardViewController;
+    if (forwardHomeViewController){
+        self.recentsTableView.allowsMultipleSelectionDuringEditing = YES;
+        self.recentsTableView.editing = YES;
+    }
+}
+
 
 #pragma mark - Override MXKRecentListViewController
 

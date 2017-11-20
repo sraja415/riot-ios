@@ -75,6 +75,17 @@
     roomCellData = (id<MXKRecentCellDataStoring>)cellData;
     if (roomCellData)
     {
+        //Forwarding_Feature_Enhancement by sraja (Neo Anderson)
+        if (roomCellData.isSelectedRoom) {
+            UIView *selectedBackGround = [[UIView alloc]initWithFrame:self.contentView.frame];
+            selectedBackGround.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.2f];
+            self.backgroundView = selectedBackGround;
+        }else{
+            UIView *selectedBackGround = [[UIView alloc]initWithFrame:self.contentView.frame];
+            selectedBackGround.backgroundColor = [UIColor clearColor];
+            self.backgroundView = selectedBackGround;
+        }
+        
         // Report computed values as is
         self.roomTitle.text = roomCellData.roomDisplayname;
         self.lastEventDate.text = roomCellData.lastEventDate;
@@ -140,9 +151,9 @@
         }
         
         self.directRoomBorderView.hidden = !roomCellData.roomSummary.room.isDirect;
-
+        
         self.encryptedRoomIcon.hidden = !roomCellData.roomSummary.isEncrypted;
-
+        
         [roomCellData.roomSummary setRoomAvatarImageIn:self.roomAvatar];
     }
     else

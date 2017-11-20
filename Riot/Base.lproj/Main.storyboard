@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--HomeNav-->
         <scene sceneID="pY4-Hu-kfo">
@@ -54,6 +60,7 @@
                         <segue destination="gkO-rP-nGK" kind="show" identifier="showContactDetails" action="showDetailViewController:sender:" id="f5u-Y1-7nt"/>
                         <segue destination="ZZb-IS-a1F" kind="presentation" identifier="showUnknownDevices" id="wUx-4y-ybn"/>
                         <segue destination="udm-55-AMb" kind="show" identifier="showContactPicker" id="Q6y-9M-Ugl"/>
+                        <segue destination="nFe-AL-Rju" kind="push" identifier="show_forward" id="N37-Hf-M9G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94y-cU-qQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -570,9 +577,101 @@
             </objects>
             <point key="canvasLocation" x="4174" y="-2050"/>
         </scene>
+        <!--Chat Forward View Controller-->
+        <scene sceneID="ull-Ah-PMd">
+            <objects>
+                <viewController storyboardIdentifier="ChatForwardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nFe-AL-Rju" customClass="ChatForwardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JuX-Sd-GnI"/>
+                        <viewControllerLayoutGuide type="bottom" id="CQq-1n-v6p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0IS-LC-LyR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfP-82-Uhb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whx-uW-0Lg">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Chats selected." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcI-cK-i5P">
+                                        <rect key="frame" x="14" y="0.0" width="306" height="40"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="0.71372549019999998" green="0.1333333333" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzG-w5-PMn">
+                                        <rect key="frame" x="320" y="0.0" width="55" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="8QE-bo-IHb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="tintColor" red="0.094084415010000005" green="0.75100463949999996" blue="0.040395697610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="forward-message.png">
+                                            <color key="titleColor" red="0.094084415010000005" green="0.75100463949999996" blue="0.040395697610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.094084415010000005" green="0.75100463949999996" blue="0.040395697610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onButtonPressed:" destination="nFe-AL-Rju" eventType="touchUpInside" id="tTI-D2-cx5"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Sca-t6-ANs">
+                                        <rect key="frame" x="327.5" y="0.0" width="40" height="40"/>
+                                        <color key="tintColor" red="0.71372549019999998" green="0.1333333333" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Sca-t6-ANs" secondAttribute="height" multiplier="1:1" id="sOa-v2-h95"/>
+                                        </constraints>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RcI-cK-i5P" secondAttribute="bottom" id="2cV-qd-0eV"/>
+                                    <constraint firstAttribute="trailing" secondItem="YzG-w5-PMn" secondAttribute="trailing" id="9Wd-h8-fqN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sca-t6-ANs" secondAttribute="bottom" id="F6K-j9-D0b"/>
+                                    <constraint firstAttribute="height" constant="40" id="LSF-4L-KvB"/>
+                                    <constraint firstItem="YzG-w5-PMn" firstAttribute="top" secondItem="whx-uW-0Lg" secondAttribute="top" id="TBL-Hj-KpC"/>
+                                    <constraint firstItem="Sca-t6-ANs" firstAttribute="centerX" secondItem="YzG-w5-PMn" secondAttribute="centerX" id="UEp-de-9Yj"/>
+                                    <constraint firstItem="YzG-w5-PMn" firstAttribute="height" secondItem="Sca-t6-ANs" secondAttribute="height" id="Zyn-nP-P90"/>
+                                    <constraint firstItem="YzG-w5-PMn" firstAttribute="leading" secondItem="RcI-cK-i5P" secondAttribute="trailing" id="eH8-pT-FZw"/>
+                                    <constraint firstItem="RcI-cK-i5P" firstAttribute="top" secondItem="whx-uW-0Lg" secondAttribute="top" id="ghv-nm-6h7"/>
+                                    <constraint firstItem="Sca-t6-ANs" firstAttribute="top" secondItem="whx-uW-0Lg" secondAttribute="top" id="r4N-xD-Z2c"/>
+                                    <constraint firstItem="Sca-t6-ANs" firstAttribute="centerY" secondItem="YzG-w5-PMn" secondAttribute="centerY" id="tok-DX-Fth"/>
+                                    <constraint firstItem="RcI-cK-i5P" firstAttribute="leading" secondItem="whx-uW-0Lg" secondAttribute="leading" constant="14" id="wyQ-Yp-BPl"/>
+                                    <constraint firstAttribute="bottom" secondItem="YzG-w5-PMn" secondAttribute="bottom" id="ydq-MC-xZa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CQq-1n-v6p" firstAttribute="top" secondItem="whx-uW-0Lg" secondAttribute="bottom" id="3eZ-bL-5e3"/>
+                            <constraint firstItem="whx-uW-0Lg" firstAttribute="top" secondItem="LfP-82-Uhb" secondAttribute="bottom" id="BE5-LU-dft"/>
+                            <constraint firstAttribute="trailing" secondItem="whx-uW-0Lg" secondAttribute="trailing" id="DbM-oe-ieF"/>
+                            <constraint firstItem="LfP-82-Uhb" firstAttribute="leading" secondItem="0IS-LC-LyR" secondAttribute="leading" id="GQk-Af-ABZ"/>
+                            <constraint firstAttribute="trailing" secondItem="LfP-82-Uhb" secondAttribute="trailing" id="ORY-hc-6Vw"/>
+                            <constraint firstItem="whx-uW-0Lg" firstAttribute="leading" secondItem="0IS-LC-LyR" secondAttribute="leading" id="jIv-v4-jyS"/>
+                            <constraint firstItem="LfP-82-Uhb" firstAttribute="top" secondItem="JuX-Sd-GnI" secondAttribute="bottom" id="qlp-4a-hTe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LUX-LK-bpn"/>
+                    <connections>
+                        <outlet property="listContentView" destination="LfP-82-Uhb" id="tnZ-mM-afo"/>
+                        <outlet property="listFooterView" destination="whx-uW-0Lg" id="9Nd-jq-tU9"/>
+                        <outlet property="selectedMemebersCount" destination="RcI-cK-i5P" id="rfM-3r-V2a"/>
+                        <outlet property="sendButton" destination="YzG-w5-PMn" id="V05-rE-JAD"/>
+                        <outlet property="sendButtonActivityIndicatorView" destination="Sca-t6-ANs" id="wcR-M9-Iq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tje-Yy-e20" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1474" y="-329"/>
+        </scene>
     </scenes>
     <resources>
         <image name="apps-icon.png" width="24" height="24"/>
+        <image name="forward-message.png" width="16" height="16"/>
         <image name="logo.png" width="120" height="101"/>
         <image name="search_icon.png" width="22" height="22"/>
         <image name="settings_icon.png" width="24" height="24"/>

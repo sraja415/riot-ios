@@ -22,7 +22,7 @@
 @implementation RecentCellData
 // trick to hide the mother class property as it is readonly one.
 // self.roomDisplayname returns this value instead of the mother class.
-@synthesize roomDisplayname;
+@synthesize roomDisplayname,isSelectedRoom;
 
 - (NSString*)notificationCountStringValue
 {
@@ -58,6 +58,7 @@
 {
     [super update];
     roomDisplayname = self.roomSummary.displayname;
+    isSelectedRoom = self.roomSummary.room.isSelectedRoom;
     if (!roomDisplayname.length)
     {
         roomDisplayname = NSLocalizedStringFromTable(@"room_displayname_no_title", @"Vector", nil);
