@@ -82,11 +82,28 @@ DEPENDENCIES:
   - DTCoreText
   - GBDeviceInfo (~> 4.4.0)
   - GoogleAnalytics
-  - MatrixKit (= 0.7.2)
-  - MatrixKit/AppExtension (= 0.7.2)
+  - MatrixKit (from `https://github.com/matrix-org/matrix-ios-kit.git`, branch `develop`)
+  - MatrixKit/AppExtension (from `https://github.com/matrix-org/matrix-ios-kit.git`, branch `develop`)
+  - MatrixSDK (from `https://github.com/matrix-org/matrix-ios-sdk.git`, branch `develop`)
   - OLMKit
   - Realm (~> 3.0.1)
   - WebRTC (= 61.5.19063)
+
+EXTERNAL SOURCES:
+  MatrixKit:
+    :branch: develop
+    :git: https://github.com/matrix-org/matrix-ios-kit.git
+  MatrixSDK:
+    :branch: develop
+    :git: https://github.com/matrix-org/matrix-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  MatrixKit:
+    :commit: 3c75aa2081e0f0f70553868c79b55f06fdf27817
+    :git: https://github.com/matrix-org/matrix-ios-kit.git
+  MatrixSDK:
+    :commit: f5cbe9f4a235ef238a3c32fc4df537e8a678a8d1
+    :git: https://github.com/matrix-org/matrix-ios-sdk.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -104,6 +121,6 @@ SPEC CHECKSUMS:
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   WebRTC: 141474ba648e0b940a70696c183451b4a3b2b10f
 
-PODFILE CHECKSUM: 7f9dbb8da3d54f9176ad46ddcca746ade3e48bf1
+PODFILE CHECKSUM: 6d232d0d0e2abe43310a38a7f453e232bdb2c3de
 
 COCOAPODS: 1.3.1

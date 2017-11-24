@@ -37,6 +37,8 @@
 		24EEE5B51F2607C500B3C705 /* SegmentedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F083BC4F1E7009EC00A9B29C /* SegmentedViewController.xib */; };
 		268F9A229B0162F9C8AEBE34 /* libPods-RiotPods-Riot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 714B084D44A5553C13D855BA /* libPods-RiotPods-Riot.a */; };
 		2BB81D411FC3327300FD7B38 /* ChatForwardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB81D401FC3327300FD7B38 /* ChatForwardViewController.m */; };
+		2BFFF4871FC826A3002B40B2 /* MatrixKit.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2BFFF4851FC826A2002B40B2 /* MatrixKit.zip */; };
+		2BFFF4881FC826A3002B40B2 /* MatrixSDK.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2BFFF4861FC826A2002B40B2 /* MatrixSDK.zip */; };
 		319F86690284AA02FC397A15 /* libPods-RiotPods-SiriIntents.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1A4A3DCE26410A60959E96 /* libPods-RiotPods-SiriIntents.a */; };
 		3205ED7D1E976C8A003D65FA /* DirectoryServerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205ED7C1E976C8A003D65FA /* DirectoryServerPickerViewController.m */; };
 		3205ED841E97725E003D65FA /* DirectoryServerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3205ED821E97725E003D65FA /* DirectoryServerTableViewCell.m */; };
@@ -635,6 +637,8 @@
 		24D6B3571F3C90D300FC7A71 /* ShareDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareDataSource.m; sourceTree = "<group>"; };
 		2BB81D3F1FC3327300FD7B38 /* ChatForwardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatForwardViewController.h; sourceTree = "<group>"; };
 		2BB81D401FC3327300FD7B38 /* ChatForwardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatForwardViewController.m; sourceTree = "<group>"; };
+		2BFFF4851FC826A2002B40B2 /* MatrixKit.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MatrixKit.zip; sourceTree = "<group>"; };
+		2BFFF4861FC826A2002B40B2 /* MatrixSDK.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MatrixSDK.zip; sourceTree = "<group>"; };
 		3205ED7B1E976C8A003D65FA /* DirectoryServerPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryServerPickerViewController.h; sourceTree = "<group>"; };
 		3205ED7C1E976C8A003D65FA /* DirectoryServerPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryServerPickerViewController.m; sourceTree = "<group>"; };
 		3205ED811E97725E003D65FA /* DirectoryServerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryServerTableViewCell.h; sourceTree = "<group>"; };
@@ -1624,6 +1628,8 @@
 		F083BB081E7009EC00A9B29C /* Riot */ = {
 			isa = PBXGroup;
 			children = (
+				2BFFF4851FC826A2002B40B2 /* MatrixKit.zip */,
+				2BFFF4861FC826A2002B40B2 /* MatrixSDK.zip */,
 				F083BB091E7009EC00A9B29C /* API */,
 				F083BB0E1E7009EC00A9B29C /* Assets */,
 				F083BBE41E7009EC00A9B29C /* Categories */,
@@ -2955,6 +2961,7 @@
 				F0614A151EDEE65000F5DC9A /* cancel@3x.png in Resources */,
 				F0E05A3E1EA0F9EB004B83FB /* tab_people_selected@3x.png in Resources */,
 				F083BE5D1E7009ED00A9B29C /* RoomIncomingAttachmentWithoutSenderInfoBubbleCell.xib in Resources */,
+				2BFFF4871FC826A3002B40B2 /* MatrixKit.zip in Resources */,
 				F083BD2B1E7009ED00A9B29C /* animatedLogo-3.png in Resources */,
 				F0E05A331EA0F9EB004B83FB /* tab_favourites.png in Resources */,
 				F083BD791E7009ED00A9B29C /* e2e_warning@3x.png in Resources */,
@@ -2964,6 +2971,7 @@
 				F083BDCB1E7009ED00A9B29C /* selection_tick.png in Resources */,
 				F083BD6C1E7009ED00A9B29C /* disclosure_icon@2x.png in Resources */,
 				F083BD4A1E7009ED00A9B29C /* call_video_mute_on_icon@3x.png in Resources */,
+				2BFFF4881FC826A3002B40B2 /* MatrixSDK.zip in Resources */,
 				F083BE8F1E7009ED00A9B29C /* RoomAvatarTitleView.xib in Resources */,
 				F083BD9E1E7009ED00A9B29C /* mod_icon.png in Resources */,
 				F083BD371E7009ED00A9B29C /* call_audio_mute_on_icon@2x.png in Resources */,
